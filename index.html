@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naga Vandana | Web Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Naga Vandana's Creative Portfolio</h1>
+    <nav>
+      <a onclick="showSection('portfolio')">Portfolio</a>
+      <a onclick="showSection('todo')">To-Do</a>
+      <a onclick="showSection('products')">Products</a>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="portfolio" class="active">
+      <h2>About Me</h2>
+      <p>Hello! I’m <strong>Naga Vandana</strong>, a front-end developer passionate about creating digital experiences.</p>
+      <h2>Projects</h2>
+      <ul>
+        <li>Responsive Portfolio Website</li>
+        <li>To-Do App with Local Storage</li>
+        <li>Product Listing Page with Filters</li>
+      </ul>
+      <h2>Contact</h2>
+      <form id="contactForm">
+        <input type="email" id="email" placeholder="Your Email" required />
+        <button type="submit">Submit</button>
+        <p id="formMessage"></p>
+      </form>
+    </section>
+
+    <section id="todo">
+      <h2>To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+      <button onclick="addTask()">Add Task</button>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <section id="products">
+      <h2>Products</h2>
+      <div class="controls">
+        <label>Category:
+          <select id="categoryFilter">
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="accessories">Accessories</option>
+            <option value="home">Home</option>
+          </select>
+        </label>
+        <label>Sort by:
+          <select id="sortOption">
+            <option value="price">Price</option>
+            <option value="rating">Rating</option>
+          </select>
+        </label>
+        <button onclick="filterProducts()">Apply</button>
+      </div>
+      <div id="productList" class="product-grid"></div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Designed with 💙 by Naga Vandana &middot; &copy; 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
